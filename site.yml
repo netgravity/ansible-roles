@@ -1,0 +1,14 @@
+---
+# This playbook deploys all site configs.
+#
+- hosts: all
+  tasks:
+    - name: Set distribution variables
+      include_vars: "os_{{ ansible_facts['os_family'] }}.yml"
+
+- name: apply base configuration to all nodes
+  hosts: rh2
+  roles:
+    - git
+    - vim
+    - yamllint
