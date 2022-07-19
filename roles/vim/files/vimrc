@@ -5,7 +5,6 @@ set hlsearch
 set list
 set listchars=tab:\ \ ,eol:$,trail:⋅
 set tabstop=2 shiftwidth=2 expandtab
-set background=dark
 " colorscheme molokai
 set backspace=indent,eol,start
 set termguicolors
@@ -34,8 +33,9 @@ Plugin 'w0rp/ale'
 Plugin 'jnurmine/Zenburn' " colorscheme
 Plugin 'altercation/vim-colors-solarized' "colorscheme
 Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " status bar files edited, git branch, virtualenv
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " status bar files edited, git branch, virtualenv
 Plugin 'Yggdroot/indentLine' " https://www.arthurkoziel.com/setting-up-vim-for-yaml/ , indent for yaml
+Plugin 'itchyny/lightline.vim'
 Plugin 'bluz71/vim-nightfly-guicolors'
 
 call vundle#end()            " required
@@ -50,7 +50,7 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 "Mappings
-let mapleader = ","
+"let mapleader = ","
 :map <C-n> :NERDTree
 
 
@@ -121,3 +121,6 @@ let g:lightline = { 'colorscheme': 'nightfly' }
 let g:moonflyIgnoreDefaultColors = 1
 
 call togglebg#map("<F5>")
+
+" lightline plugin, show status bar
+set laststatus=2
