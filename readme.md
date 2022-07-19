@@ -2,12 +2,12 @@
 
 
 
-## create dir structure
+### create dir structure
 mkdir -p roles/{base,baseEL8,monitoringServer}/{handlers,tasks,templates,files,vars,defaults,meta}
 
-## Check
+### Check
 sunny@debby:generictools_vim$ tree
-.
+```.
 └── roles
     ├── base
     │   ├── defaults
@@ -33,11 +33,14 @@ sunny@debby:generictools_vim$ tree
         ├── tasks
         ├── templates
         └── vars
-## In Ansible cfg turn hardware facts off to speed , since most of our env is vm
+```
+
+In Ansible cfg turn hardware facts off to speed , since most of our env is vm
 [defaults]
 gather_subset=!hardware 
 
-# will run the roles per hosts , the var dir will have OS_family specific variables
+### Run Script
+will run the roles per hosts , the var dir will have OS_family specific variables
 ansible-playbook site.yml -K
 
 
@@ -50,5 +53,5 @@ ansible-playbook site.yml -K
 
 
 
-## References
+### References
 [Useful Vim Ansible blog](https://www.redhat.com/sysadmin/ansible-configure-vim)
